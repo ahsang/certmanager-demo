@@ -1,4 +1,4 @@
-resource "kubernetes_manifest" "clusterissuer" {
+resource "kubectl_manifest" "clusterissuer" {
   depends_on = [helm_release.cert-manager]
-  manifest = yamldecode(templatefile("${path.module}/templates/clusterissuer.yaml", var.email))
+  yaml_body = templatefile("${path.module}/templates/clusterissuer.yaml", var.email)
 }
