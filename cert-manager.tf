@@ -17,7 +17,7 @@ resource "helm_release" "cert-manager" {
   values = [
     <<RAW_DATA
 ingressShim: 
-  defaultIssuerName: "letsencrypt-stage"
+  defaultIssuerName: "letsencrypt-prod"
   defaultIssuerKind: "ClusterIssuer"
   defaultIssuerGroup: "cert-manager.io"
 resources:
