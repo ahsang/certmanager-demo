@@ -45,19 +45,19 @@ ingress:
   className: ""
   annotations: 
     nginx.ingress.kubernetes.io/rewrite-target: /$1
-    certmanager.k8s.io/cluster-issuer: "letsencrypt-staging"
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
     certmanager.k8s.io/acme-challenge-type: http01
     kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+    kubernetes.io/tls-acme: "true"
   hosts:
-    - host: zeezouworld.com
+    - host: test.zeezouworld.com
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
     - secretName: chart-example-tls
       hosts:
-        - zeezouworld.com
+        - test.zeezouworld.com
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
