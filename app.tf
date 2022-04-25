@@ -5,4 +5,12 @@ resource helm_release "app" {
   timeout    = 900
   recreate_pods = true
   namespace = "default"
+  set {
+    name = "ingress.hosts[0].host"
+    value = var.subdomain
+  }
+  set {
+    name = "ingress.tls.hosts[0]"
+    value = var.subdomain
+  }
 }
