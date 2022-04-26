@@ -1,6 +1,6 @@
-#certmanager-demo
+# certmanager-demo
 
-##Requirements
+## Requirements
 - microk8s installed with dns and metallb enabled
 - kubectl setup and current context set to microk8s
 
